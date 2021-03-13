@@ -38,7 +38,10 @@ class Data_model extends CI_Model
             array('db' => 'id', 'dt' => 0),
             array('db' => 'id_employee', 'dt' => 1),
             array('db' => 'employee_name', 'dt' => 2),
-            array('db' => 'employee_salary', 'dt' => 3),
+            array('db' => 'employee_salary', 'dt' => 3, 'formatter' => function ($i) {
+                $hasil_rupiah = "Rp " . number_format($i, 2, ',', '.');
+                return $hasil_rupiah;
+            }),
             array('db' => 'employee_age', 'dt' => 4),
             array('db' => 'profile_image', 'dt' => 5),
 
